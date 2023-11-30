@@ -4,8 +4,8 @@ import time
 
 # Ekran oluşturma
 turtleGame_board = turtle.Screen()
-turtleGame_board.title("Kaplumbağa Tıklama Oyunu")
-turtleGame_board.bgcolor("#D2B48C")  # RGB değeri ile kahverengi rengi
+turtleGame_board.title("Catch The Turtle")
+turtleGame_board.bgcolor("#D2B48C")
 turtleGame_board.setup(width=600, height=600)
 
 # Kaplumbağa oluşturma
@@ -35,7 +35,6 @@ time_display.color("black")
 time_display.goto(0, 230)
 time_display.write("Time: {}".format(time_limit), align="center", font=("Courier", 18, "normal"))
 
-# Fare tıklandığında gerçekleşecek olay
 def tıklama_olayı(x, y):
     global score
     if kaplumbaga.distance(x, y) < 20:
@@ -63,7 +62,7 @@ def update_time():
     time_display.clear()
     time_display.write("Time: {}".format(time_limit), align="center", font=("Courier", 18, "normal"))
 
-# Fare tıklanma olayını dinle
+
 turtleGame_board.onclick(tıklama_olayı)
 
 # Geri sayım başlatma
